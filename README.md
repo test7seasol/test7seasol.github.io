@@ -1,6 +1,39 @@
 # test7seasol.github.io
 
 
+ // Direct call without showing a system launcher in call
+
+      try {
+                                if (ActivityCompat.checkSelfPermission(
+                                        context, Manifest.permission.CALL_PHONE
+                                    ) != PackageManager.PERMISSION_GRANTED
+                                ) {
+                                    return@RecentCallsAdapter
+                                }
+                                (context.getSystemService(TELECOM_SERVICE) as TelecomManager).placeCall(
+                                    Uri.fromParts(
+                                        "tel", recentCall.phoneNumber, null
+                                    ), Bundle()
+                                )
+                            } catch (unused2: java.lang.Exception) {
+                                val intent = Intent(
+                                    "android.intent.action.CALL", Uri.parse(
+                                        "tel:$str"
+                                    )
+                                )
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                                try {
+                                    context.startActivity(intent)
+                                } catch (unused3: ActivityNotFoundException) {
+                                    Toast.makeText(
+                                        context,
+                                        "Could not find an activity to place the call.",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                            }
+                            
+
   // Show First App in Top in display overlay permission
 
            Hello World
