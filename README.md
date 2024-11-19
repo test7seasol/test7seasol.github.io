@@ -2,6 +2,15 @@
 
 // Hello World
 
+// BuildConfig is not show
+            
+        // gradle.properties
+        android.defaults.buildfeatures.buildconfig=true
+            clearn Project -> Rebuild Project
+            versionid.text = "Version ${BuildConfig.VERSION_NAME}"
+
+
+
 // statusbar hide & hide statusbar statusbar color
     
      <style name="Base.Theme.CompassApp" parent="Theme.Material3.Light.NoActionBar">
