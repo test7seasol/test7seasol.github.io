@@ -2,6 +2,12 @@
 
 // Hello World
 
+
+// Translater Api Free language transfer api
+
+        https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=de&dt=t&q=Hello World
+
+
 // Loti Animation video xml lotianimation view
 
         implementation(libs.lottie)
