@@ -2,6 +2,45 @@
 
 // Hello World
 
+// Pick a image from camera opencamera camera image pick camera pick camera image
+   
+    private val CAMERA_REQUEST_CODE = 100
+      
+        <provider
+                  android:name="androidx.core.content.FileProvider"
+                  android:authorities="${applicationId}.fileprovider"
+                  android:enabled="true"
+                  android:exported="false"
+                  android:grantUriPermissions="true">
+                  <meta-data
+                      android:name="android.support.FILE_PROVIDER_PATHS"
+                      android:resource="@xml/file_paths" />
+              </provider>
+              
+    fun openCamera() {
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        val photoFile = createImageFile()
+        imageUri = FileProvider.getUriForFile(
+            this, "${packageName}.fileprovider", photoFile
+        )
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
+        startActivityForResult(intent, CAMERA_REQUEST_CODE)
+    }
+
+            onActivityResult
+           if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
+                  try {
+                      // Decode the captured image to a Bitmap
+                      val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, imageUri)
+                      ("FAT: Bitmap HGEre: " + imageUri).log()
+                      (imageUri.toString()).startUcrop(this@MainMainActivity)
+      //                extractTextWithFirebase(bitmap)
+                  } catch (e: IOException) {
+                      e.message?.log()
+                  }
+              }
+        
+
 // Google ad error addmob lib errror ad issues ad error
 
       in menifest
