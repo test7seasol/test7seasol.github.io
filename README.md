@@ -1,10 +1,41 @@
 # test7seasol.github.io
 
+       
+            
 // Hello World
         
           buildFeatures {
                 viewBinding = true
                 buildConfig = true
+            }
+
+             
+          private fun applyStatusBarColor() {
+                val isDarkMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
+        
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    val controller = window.insetsController
+                    if (controller != null) {
+                        if (isDarkMode) {
+                            controller.setSystemBarsAppearance(
+                                0, WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+                            )
+                        } else {
+                            controller.setSystemBarsAppearance(
+                                WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
+                                WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+                            )
+                        }
+                    }
+                } else {
+                    @Suppress("DEPRECATION") if (isDarkMode) {
+                        window.decorView.systemUiVisibility = 0
+                    } else {
+                        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+                    }
+                }
+        // Set the status bar color
+                window.statusBarColor = ContextCompat.getColor(this, R.color.white)
             }
             
 // Custom ext funcations
