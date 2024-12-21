@@ -1,7 +1,12 @@
 # test7seasol.github.io
 
 // Hello World
-
+        
+          buildFeatures {
+                viewBinding = true
+                buildConfig = true
+            }
+            
 // Custom ext funcations
 
         
