@@ -1,6 +1,7 @@
 # test7seasol.github.io
 
        
+
             
 // Hello World
         
@@ -8,6 +9,8 @@
 
 // Custom Popupwindow dialog popup dialog popupmenu 
 
+              //Demo Api api call apidemo demoapi
+       https://d2is1ss4hhk4uk.cloudfront.net/contct.json
         implementation("com.github.kakajika:RelativePopupWindow:0.4.1")
 
         
