@@ -4,7 +4,21 @@
 // Hello World
 
 // FastScrollRecyclerView & fastscroll recycler view
-            
+
+                        
+                <com.gallery.photos.editpic.Views.FastScrollRecyclerView
+                    android:id="@+id/recyclerViewPictures"
+                    android:layout_below="@+id/rlToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/picturesselectedcontainerid"
+                    app:bubbleColor="@color/blue_color_picker"
+                    app:bubbleTextColor="@color/white"
+                    app:handleColor="#999999"
+                    app:spanCount="3"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    tools:listitem="@layout/item_media" />
+                    
             class FastScrollRecyclerView : RecyclerView {
             
                 private val fastScroller: FastScroller
